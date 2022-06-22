@@ -10,15 +10,11 @@ function AnimeCard() {
           alt="img"
           className="anime-card__img img-fluid"
         />
-        <span className="anime-card__episode-num text-white bg-dark p-2">
+        <span className="anime-card__episode-num text-white bg-dark p-1 ps-2 text-capitalize fw-bolder ">
           ep 1500
         </span>
-        <h3 className="anime-card__title fs-6 mb-0 text-center py-3 px-1 text-white bg-dark">
-          Lorem ipsum dolor....
-        </h3>
-
         <span className="anime-card__play-icon">
-          <BsPlayCircle className="fs-1 text-primary" />
+          <BsPlayCircle className="text-primary" />
         </span>
       </Link>
 

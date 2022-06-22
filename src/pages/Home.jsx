@@ -69,25 +69,46 @@ function Home() {
       <Row>
         <Col lg="9">
           <Slider data={data} />
-          <Row className="mt-3">
-            <Col lg="3">
+          <Row className="mt-3 gy-4" xs={3} sm={3} md={4} lg={5}>
+            <Col>
               <AnimeCard />
             </Col>
-            <Col lg="3">
+            <Col>
               <AnimeCard />
             </Col>
-            <Col lg="3">
+            <Col>
               <AnimeCard />
             </Col>
-            <Col lg="3">
+            <Col>
               <AnimeCard />
             </Col>
-            <Col lg="2">
+            <Col>
+              <AnimeCard />
+            </Col>
+            <Col>
+              <AnimeCard />
+            </Col>
+            <Col>
+              <AnimeCard />
+            </Col>
+            <Col>
+              <AnimeCard />
+            </Col>
+            <Col>
+              <AnimeCard />
+            </Col>
+            <Col>
+              <AnimeCard />
+            </Col>
+            <Col>
+              <AnimeCard />
+            </Col>
+            <Col>
               <AnimeCard />
             </Col>
           </Row>
         </Col>
-        <Col lg="3">
+        <Col lg="3" className="d-none d-lg-block">
           <TopAnime anime={anime} />
         </Col>
       </Row>

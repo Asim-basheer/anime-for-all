@@ -1,7 +1,6 @@
 .anime-card {
   position: relative;
   display: block;
-  width: 200px;
   &__img {
     border-radius: $borderRadius;
   }
@@ -9,47 +8,53 @@
   &__episode-num {
     position: absolute;
     left: 0;
-    top: 0;
+    bottom: 0;
     font-size: 0.8rem;
     width: fit-content;
     height: fit-content;
     display: block;
-    border-top-left-radius: $borderRadius;
-    border-bottom-right-radius: $borderRadius;
-  }
-  &__title {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
     border-bottom-left-radius: $borderRadius;
-    border-bottom-right-radius: $borderRadius;
+    @include respond(xs) {
+      font-size: 0.5rem;
+    }
   }
 
   &__play-icon {
-    @include centerPosition;
     @include centerFlex;
-    width: 0%;
-    height: 0%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
     background-color: rgba(#000, 0.5);
     border-radius: $borderRadius;
     opacity: 0;
     @include transitionMain;
+    svg {
+      font-size: 3.5rem;
+
+      @include respond(sm) {
+        font-size: 2.8rem;
+      }
+    }
   }
 
   // styling for details
   &__details {
     position: absolute;
     left: 30%;
-    top: 0%;
-    // transform: translateY(-50%);
+    top: -30%;
     z-index: 20;
     border-radius: $borderRadius;
     width: 300px;
     overflow: hidden;
     opacity: 0;
     pointer-events: none;
-    @include transitionMain;
+    transition: all 0.5s 0.2s ease-in;
+
+    @include respond(md) {
+      display: none;
+    }
     &__add-favorite {
       @include centerFlex;
       cursor: pointer;
@@ -82,8 +87,6 @@
 .anime-card-parent {
   &:hover .anime-card__play-icon {
     opacity: 1;
-    width: 100%;
-    height: 100%;
   }
 
   &:hover .anime-card__details {

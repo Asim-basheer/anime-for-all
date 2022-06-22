@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/anime-for-all/static/css/main.012e0d94.css",
+    "main.js": "/anime-for-all/static/js/main.a6e5db9e.js",
+    "static/media/sign-up.png": "/anime-for-all/static/media/sign-up.0ac07f4b7f7129c27d63.png",
+    "static/media/login-img.webp": "/anime-for-all/static/media/login-img.44d318c2a5f6c201ad12.webp",
+    "index.html": "/anime-for-all/index.html",
+    "main.012e0d94.css.map": "/anime-for-all/static/css/main.012e0d94.css.map",
+    "main.a6e5db9e.js.map": "/anime-for-all/static/js/main.a6e5db9e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.012e0d94.css",
+    "static/js/main.a6e5db9e.js"
+  ]
+}

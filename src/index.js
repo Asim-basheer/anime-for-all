@@ -13,7 +13,7 @@ import "./sass/global-import.scss";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/animeforall">
+    <BrowserRouter basename="/anime-for-all">
       <App />
     </BrowserRouter>
   </React.StrictMode>

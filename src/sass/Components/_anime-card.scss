@@ -1,0 +1,93 @@
+.anime-card {
+  position: relative;
+  display: block;
+  width: 200px;
+  &__img {
+    border-radius: $borderRadius;
+  }
+
+  &__episode-num {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 0.8rem;
+    width: fit-content;
+    height: fit-content;
+    display: block;
+    border-top-left-radius: $borderRadius;
+    border-bottom-right-radius: $borderRadius;
+  }
+  &__title {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-bottom-left-radius: $borderRadius;
+    border-bottom-right-radius: $borderRadius;
+  }
+
+  &__play-icon {
+    @include centerPosition;
+    @include centerFlex;
+    width: 0%;
+    height: 0%;
+    background-color: rgba(#000, 0.5);
+    border-radius: $borderRadius;
+    opacity: 0;
+    @include transitionMain;
+  }
+
+  // styling for details
+  &__details {
+    position: absolute;
+    left: 30%;
+    top: 0%;
+    // transform: translateY(-50%);
+    z-index: 20;
+    border-radius: $borderRadius;
+    width: 300px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    @include transitionMain;
+    &__add-favorite {
+      @include centerFlex;
+      cursor: pointer;
+    }
+    &__title {
+    }
+
+    &__des {
+      font-size: 0.8rem;
+    }
+
+    &__list {
+      list-style: none;
+      font-size: 0.8rem;
+    }
+
+    &__item {
+    }
+
+    &__link {
+      @include transitionMain;
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+// hover effect on the parent
+.anime-card-parent {
+  &:hover .anime-card__play-icon {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover .anime-card__details {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

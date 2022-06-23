@@ -1,3 +1,3 @@
-#Website Name: Anime For All
+# Website Name: Anime For All
 
-#life demo : https://asim-basheer.github.io/anime-for-all/
+# life demo : https://asim-basheer.github.io/anime-for-all/

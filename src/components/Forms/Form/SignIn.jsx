@@ -2,17 +2,25 @@ import { Formik } from "formik";
 import { Col, Row, Form, Button, Container } from "react-bootstrap";
 import * as yup from "yup";
 
+import { useState, useEffect } from "react";
+
 import signIn from "../../../images/login-img.webp";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function SignIn() {
+  const [loginStatus, setLoginStatus] = useState({});
   const initialValues = {
-    email: "",
+    username: "",
     password: "",
   };
 
   const validationSchema = yup.object({
-    email: yup.string().email("email format invalid").required(),
+    username: yup
+      .string()
+      .min(8, "Must be at least 8 characters")
+      .max(30, "must be less than 20 characters")
+      .required(),
     password: yup
       .string()
       .min(8, "Must be at least 8 characters")
@@ -25,10 +33,28 @@ function SignIn() {
   });
 
   const onSubmit = async (values, { resetForm }) => {
-    delete values.confirm_password;
-    await console.log(values);
+    try {
+      const { data } = await axios.post("http://localhost:3001/login", values);
+      if (data.message) {
+        setLoginStatus(data.message);
+      } else {
+        setLoginStatus(data[0].username);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+
     resetForm();
   };
+
+  useEffect(() => {
+    axios.get("http://localhost:3001/login").then((response) => {
+      // if (response.data.loggedIn === true) {
+      // setLoginStatus(response.data.user[0].username);
+      console.log(response);
+      // }
+    });
+  }, []);
 
   return (
     <Container>
@@ -61,27 +87,27 @@ function SignIn() {
                   >
                     <Row className="gx-0">
                       <Form.Group
+                        className="mb-2"
                         as={Col}
                         sm="12"
-                        controlId="validationFormik02"
-                        className="mb-2"
+                        controlId="validationFormik01"
                       >
                         <Form.Control
                           type="text"
-                          name="email"
-                          placeholder="Email "
-                          value={values.email}
+                          name="username"
+                          placeholder="Username "
+                          value={values.username}
                           onChange={handleChange}
-                          isValid={touched.email && !errors.email}
-                          isInvalid={!!errors.email && touched.email}
                           onBlur={handleBlur}
+                          isValid={touched.username && !errors.username}
+                          isInvalid={!!errors.username && touched.username}
                         />
-                        {errors.email && touched.email ? (
+                        {errors.username && touched.username ? (
                           <Form.Control.Feedback
                             type="invalid"
                             className="mb-1"
                           >
-                            {errors.email}
+                            {errors.username}
                           </Form.Control.Feedback>
                         ) : (
                           <Form.Control.Feedback className="mb-1">
@@ -93,7 +119,7 @@ function SignIn() {
                       <Form.Group
                         as={Col}
                         sm="12"
-                        controlId="validationFormik03"
+                        controlId="validationFormik02"
                         className="mb-2"
                       >
                         <Form.Control

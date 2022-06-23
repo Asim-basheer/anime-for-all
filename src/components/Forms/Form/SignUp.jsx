@@ -1,6 +1,7 @@
 import { Formik } from "formik";
 import { Col, Row, Form, Button, Container } from "react-bootstrap";
 import * as yup from "yup";
+import axios from "axios";
 
 import signUpImg from "../../../images/sign-up.png";
 import { Link } from "react-router-dom";
@@ -38,7 +39,12 @@ function SignUp() {
 
   const onSubmit = async (values, { resetForm }) => {
     delete values.confirm_password;
-    await console.log(values);
+    try {
+      const result = await axios.post("http://localhost:3001/register", values);
+      console.log(result);
+    } catch (error) {
+      console.log(error.data.message);
+    }
     resetForm();
   };
 

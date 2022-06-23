@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/anime-for-all/static/css/main.a48d8c64.css",
-    "main.js": "/anime-for-all/static/js/main.ab795e64.js",
+    "main.js": "/anime-for-all/static/js/main.ccd9051e.js",
     "static/media/sign-up.png": "/anime-for-all/static/media/sign-up.0ac07f4b7f7129c27d63.png",
     "static/media/login-img.webp": "/anime-for-all/static/media/login-img.44d318c2a5f6c201ad12.webp",
     "index.html": "/anime-for-all/index.html",
     "main.a48d8c64.css.map": "/anime-for-all/static/css/main.a48d8c64.css.map",
-    "main.ab795e64.js.map": "/anime-for-all/static/js/main.ab795e64.js.map"
+    "main.ccd9051e.js.map": "/anime-for-all/static/js/main.ccd9051e.js.map"
   },
   "entrypoints": [
     "static/css/main.a48d8c64.css",
-    "static/js/main.ab795e64.js"
+    "static/js/main.ccd9051e.js"
   ]
 }
